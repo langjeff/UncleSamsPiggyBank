@@ -152,10 +152,10 @@ const dataSeed = [
   },
 ];
 
-db.Data.remove({})
-  .then(() => db.Data.collection.insertMany(dataSeed))
+db.Tax.remove({})
+  .then(() => db.Tax.collection.insertMany(taxSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result.n + " Records Inserted!");
     process.exit(0);
   })
   .catch((err) => {
