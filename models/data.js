@@ -3,7 +3,18 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const bookSchema = new Schema({
+const dataSchema = new Schema({
+  {
+    category: "",
+    type: "",
+    returns: ,
+    base: ,
+    rate: ,
+    amount: 
+
+
+
+
   title: { type: String, required: true },
   author: { type: String, required: true },
   synopsis: String,
