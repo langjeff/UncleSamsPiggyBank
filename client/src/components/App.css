@@ -1,5 +1,5 @@
 html {
-  background: url("./images/UncleSamsBG.jpg") no-repeat center center fixed;
+  background: url("../images/UncleSamsBG.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -44,10 +44,31 @@ p {
 button {
   margin-top: 20px;
   border-radius: 20px;
-  background-color: inherit;
+  background-color: white;
   border: none;
   box-shadow: 3px 3px 2px black;
 }
+button:hover {
+  background-color: lightgray; /* Green */
+}
+
+.card {
+  color: white;
+  background-image: url("../images/QuestionCard.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+.question {
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+  align-content: center;
+  padding-top: 180px;
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
 /* .App {
   text-align: center;
 }
