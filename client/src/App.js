@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./components/Home";
 import Questions from "./components/Questions";
 import Results from "./components/Results";
+import Save from "./pages/Save"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/questions" component={Questions} />
         <Route exact path="/results" component={Results} />
+        <Route exact path="/save" component={Save} />
       </div>
     </Router>
   );

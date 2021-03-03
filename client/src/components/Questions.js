@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
 import USPB_LOGO from "../images/USPB_LOGO.png";
 import Slider from "@material-ui/core/Slider";
 
