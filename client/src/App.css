@@ -33,13 +33,14 @@ body {
 }
 
 h2 {
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px lightblue;
   align-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 p {
-  text-shadow: 2px 2px 2px black;
   align-content: center;
   font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 button {
   margin-top: 20px;
@@ -48,6 +49,11 @@ button {
   border: none;
   box-shadow: 3px 3px 2px black;
 }
+.guy {
+  width: 200px;
+  align-content: center;
+}
+
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

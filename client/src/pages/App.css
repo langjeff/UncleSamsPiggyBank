@@ -27,7 +27,7 @@ body {
 }
 
 .MuiDataGrid-root {
-  background-image: linear-gradient(white, lightblue);
+  background-image: linear-gradient(white, grey);
 }
 
 .message {
@@ -54,17 +54,29 @@ body {
 }
 
 h2 {
+  color: #3e58b6;
   align-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 h4 {
   color: white;
+  background-color: #3e58b6;
   align-content: center;
   font-weight: 700;
+  border-radius: 15px;
+  padding: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h5 {
+  color: green;
+  font-weight: 900;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 p {
   align-content: center;
+  color: black;
   font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 button {
   margin-top: 20px;
@@ -91,9 +103,10 @@ button:hover {
   font-size: 20px;
   color: black;
   align-content: center;
-  padding-top: 170px;
+  padding-top: 160px;
   padding-left: 26px;
   padding-right: 26px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #next {
@@ -111,8 +124,7 @@ button:hover {
   background-color: green; /* Green */
 }
 .guy {
-  width: 200px;
-  align-content: center;
+  padding-left: 32%;
 }
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import Questions from "./components/Questions";
-import Results from "./components/Results";
+import Home from "./pages/Home";
+import Questions from "./pages/Questions";
+import Results from "./pages/Results";
 
 function App() {
   return (
