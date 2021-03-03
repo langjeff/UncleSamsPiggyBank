@@ -17,7 +17,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  // process.env.MONGODB_URI || //* need db "mongodb://localhost/reactreadinglist"
+  process.env.MONGODB_URI || "mongodb://localhost/unclesam"
 );
 
 // Start the API server

@@ -3,7 +3,7 @@ const db = require("../models");
 
 // This file empties the Data
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/uncleSams");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/unclesam");
 
 const dataSeed = [
   {
@@ -152,8 +152,8 @@ const dataSeed = [
   },
 ];
 
-db.Tax.remove({})
-  .then(() => db.Tax.collection.insertMany(taxSeed))
+db.TaxData.remove({})
+  .then(() => db.TaxData.collection.insertMany(dataSeed))
   .then((data) => {
     console.log(data.result.n + " Records Inserted!");
     process.exit(0);
