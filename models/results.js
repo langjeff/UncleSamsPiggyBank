@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const resultSchema = new Schema(
   {
-    type: { type: String, required: true },
-    desc: { type: String, required: true },
-    addInfo: { type: String, required: true },
-    percentage: { type: Double, required: true },
+    userName: { type: String, required: true },
+    answers: [],
+    results: [],
+    votes: Number,
   },
   {
-    collection: "userbudgets",
+    collection: "results",
   }
 );
 
-const UserBudgets = mongoose.model("UserBudgets", userSchema);
+const Results = mongoose.model("Results", resultSchema);
 
-module.exports = UserBudgets;
+module.exports = Results;
