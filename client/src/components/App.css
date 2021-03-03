@@ -17,6 +17,15 @@ body {
   align-items: center;
   opacity: 100%;
 }
+.data-container {
+  background-color: white;
+  display: contents;
+  justify-content: center;
+  align-items: center;
+  opacity: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
 
 .message {
   flex-grow: 1;
@@ -28,18 +37,29 @@ body {
   padding-top: 25px;
   padding-bottom: 15px;
   border-radius: 18px;
-  border-color: white;
   box-shadow: 3px 3px 2px rgb(20, 20, 20);
   margin-left: 10px;
   margin-right: 10px;
+}
+.data {
+  flex-basis: auto;
+  color: white;
+  font-weight: 900;
+  background-image: linear-gradient(white, #3e58b6);
+  border-radius: 18px;
+  box-shadow: 3px 3px 2px rgb(20, 20, 20);
 }
 
 h2 {
   text-shadow: 2px 2px 2px black;
   align-content: center;
 }
+h4 {
+  color: green;
+  align-content: center;
+  font-weight: 800;
+}
 p {
-  text-shadow: 2px 2px 2px black;
   align-content: center;
   font-weight: 700;
 }
@@ -60,7 +80,8 @@ button:hover {
   background-image: url("../images/QuestionCard.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 572px;
+  box-shadow: 5px 5px 5px rgb(92, 92, 92);
 }
 .question {
   font-weight: 600;

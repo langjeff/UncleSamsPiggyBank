@@ -1,10 +1,9 @@
 import React from "react";
 import "./App.css";
 import USPB_LOGO from "../images/USPB_LOGO.png";
-// import QuestionCard from "../images/QuestionCard.jpg";
-import PiggyBankBtn from "../images/PiggyBankBtn.png";
+import Slider from "@material-ui/core/Slider";
 
-function Home() {
+function Question() {
   return (
     <div className="container">
       <div className="logo">
@@ -25,8 +24,17 @@ function Home() {
           <br />
           <br />
           <br />
-          <br />
-          ... Slider ...
+          <h4 id="discrete-slider-always" gutterBottom>
+            Slide to pick a value
+          </h4>
+          <Slider
+            defaultValue={5}
+            getAriaValueText=""
+            aria-labelledby="discrete-slider-always"
+            step={0.5}
+            marks=""
+            valueLabelDisplay="on"
+          />
           <br />
           <br />
           <button id="next">Next Question</button>
@@ -36,4 +44,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Question;
