@@ -1,4 +1,8 @@
 import React from "react";
+<<<<<<< HEAD:client/src/pages/Results.js
+=======
+// import "./App.css";
+>>>>>>> 736392a24cbbaeb3c0b37fdf7388eb7bb4e1c398:client/src/components/Results.js
 import USPB_LOGO from "../images/USPB_LOGO.png";
 import DataTable from "../components/DataTable";
 import PiggyBankBtn from "../images/PiggyBankBtn.png";
