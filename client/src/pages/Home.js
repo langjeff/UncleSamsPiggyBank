@@ -2,6 +2,7 @@ import React from "react";
 // import "./App.css";
 import USPB_LOGO from "../images/USPB_LOGO.png";
 import PiggyBankBtn from "../images/PiggyBankBtn.png";
+import Guy from "../images/Guy.png";
 
 function Home() {
   return (
@@ -19,6 +20,9 @@ function Home() {
           We will see how much better we are than the government at balancing
           the budget!
         </p>
+        <div className="guy">
+          <img src={Guy} alt="Monopoly Guy"></img>
+        </div>
       </div>
       <button id="play">
         <img src={PiggyBankBtn} />

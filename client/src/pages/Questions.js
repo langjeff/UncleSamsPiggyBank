@@ -1,7 +1,11 @@
 import React from "react";
+<<<<<<< HEAD:client/src/pages/Questions.js
+=======
 // import "./App.css";
+>>>>>>> 736392a24cbbaeb3c0b37fdf7388eb7bb4e1c398:client/src/components/Questions.js
 import USPB_LOGO from "../images/USPB_LOGO.png";
 import Slider from "@material-ui/core/Slider";
+import "./App.css";
 
 function Question() {
   return (
@@ -22,11 +26,9 @@ function Question() {
           <br />
           of the federal budget.
           <br />
-          <br />
-          <br />
-          <h4 id="discrete-slider-always" gutterBottom>
+          <h5 id="discrete-slider-always" gutterBottom>
             Slide to pick a value
-          </h4>
+          </h5>
           <Slider
             defaultValue={5}
             getAriaValueText=""
@@ -35,7 +37,6 @@ function Question() {
             marks=""
             valueLabelDisplay="on"
           />
-          <br />
           <br />
           <button id="next">Next Question</button>
         </div>
