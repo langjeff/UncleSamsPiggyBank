@@ -1,10 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+<<<<<<< HEAD
 import Home from "./pages/Home";
 import Questions from "./pages/Questions";
 import Results from "./pages/Results";
 import Save from "./pages/Save";
 import "./App.css";
+=======
+import "./App.css";
+import Home from "./pages/Home";
+import Questions from "./pages/Questions";
+import Results from "./pages/Results";
+>>>>>>> 89338205800422898f26c709738526797636291e
 
 function App() {
   return (
