@@ -1,13 +1,18 @@
-import React from "react";
-<<<<<<< HEAD:client/src/pages/Questions.js
-=======
-// import "./App.css";
->>>>>>> 736392a24cbbaeb3c0b37fdf7388eb7bb4e1c398:client/src/components/Questions.js
+import React, { useEffect, useState } from "react";
 import USPB_LOGO from "../images/USPB_LOGO.png";
 import Slider from "@material-ui/core/Slider";
 import "./App.css";
+import API from "../utils/API";
 
 function Question() {
+  //reamember to make index hook
+  const [index, setIndex] = useState(0);
+  const [taxInfo, setTaxInfo] = useState([]);
+  useEffect(() => {
+    API.getAllTax().then(function (taxdata) {
+      setTaxInfo(taxdata.data);
+    });
+  }, []);
   return (
     <div className="container">
       <div className="logo">
@@ -15,7 +20,7 @@ function Question() {
       </div>
       <div className="card">
         <div className="question" align="center">
-          People making less than $50,000
+          {/* {taxInfo[0].income} */}
           <br />
           pay around $8,000 a year in taxes,
           <br />
