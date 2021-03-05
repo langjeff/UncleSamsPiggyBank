@@ -11,7 +11,11 @@ import "./App.css";
 import Home from "./pages/Home";
 import Questions from "./pages/Questions";
 import Results from "./pages/Results";
+<<<<<<< HEAD
 >>>>>>> 89338205800422898f26c709738526797636291e
+=======
+import Save from "./pages/Save";
+>>>>>>> fe9968c8bfa0abf1822352aaf049af95f9a63b7e
 
 function App() {
   return (
