@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Questions from "./pages/Questions";
 import Results from "./pages/Results";
+import Save from "./pages/Save";
 
 function App() {
   return (
