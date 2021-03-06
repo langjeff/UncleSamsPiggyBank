@@ -8,7 +8,11 @@ function Results() {
   return (
     <div className="container">
       <div className="logo">
-        <img src={USPB_LOGO} alt="Uncle Sam's Piggy Bank Logo" />
+        <img
+          src={USPB_LOGO}
+          alt="Uncle Sam's Piggy Bank Logo"
+          className="Qlogo"
+        />
       </div>
       <div className="data-container">
         <h4 align="center">Compare your results to others</h4>
