@@ -22,9 +22,9 @@ function Login() {
     // if NO save new user and data then return results of that user
     
     // call function to check if user exists in database
-    useEffect(() => {
-      checkUser()
-    }, [])
+    // useEffect(() => {
+    //   checkUser()
+    // }, [])
 
     // funciton checks to see if user exists
     function checkUser() {
