@@ -1,7 +1,17 @@
-import * as React from "react";
+import React from "react";
 import Slider from "@material-ui/core/Slider";
 
-function Card(category, returns, base, rate, amount) {
+function Card({ question, onAnswer }) {
+  console.log(question);
+
+  // const inject = [question[index]];
+  // console.log(inject);
+  // const percent = question.rate * 100;
+  const percent = question && Math.floor(question.rate * 100);
+  console.log(percent);
+  function dValue(percent) {
+    return percent * 100;
+  }
   return (
     <div className="container">
       <div className="card">
@@ -9,32 +19,39 @@ function Card(category, returns, base, rate, amount) {
           {/* <h4>{category}</h4>
           <h4>Number of tax returns:{returns}</h4>
           <h4>Total Income:{base}</h4> */}
+
           <br />
-          Category Title will pass in here...
+          {question && question.category}
+          <br />
+
+          <br />
+          {question && question.returns}
           <br />
           <br />
-          Number of tax returns will pass in here...
-          <br />
-          <br />
-          Total income will pass in here...
+          {question && question.base}
           <br />
           <h5 id="discrete-slider-always" gutterBottom>
             Slide to pick a value
           </h5>
           <Slider
-            defaultValue={5}
-            getAriaValueText={rate}
+            defaultValue={percent}
+            getAriaValueText={question && question.rat}
             aria-labelledby="discrete-slider-always"
-            step={0.5}
-            marks=""
+            step={1}
             valueLabelDisplay="on"
           />
-          {/* <h4>Amount of taxes paid:{amount}</h4> */}
+
           <br />
-          Amount of taxes paid will pass here...
+          <h4>Amount of taxes paid:{question && question.amount}</h4>
+
           <br />
           <br />
-          <button id="next">Next Question</button>
+          {question && question.caption}
+          <br />
+          <br />
+          {/* <button id="next" onclick={onAnswer}>
+            Next Question
+          </button> */}
         </div>
       </div>
     </div>
