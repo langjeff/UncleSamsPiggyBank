@@ -7,7 +7,6 @@ html {
 }
 
 body {
-  height: 1000px;
   margin-top: 0;
 }
 .container {
@@ -24,6 +23,10 @@ body {
   opacity: 100%;
   margin-left: 25%;
   margin-right: 25%;
+}
+.Qlogo {
+  width: 60%;
+  padding-left: 20%;
 }
 
 .MuiDataGrid-root {
@@ -83,17 +86,20 @@ button:hover {
   background-image: url("../images/QuestionCard.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 550px;
+  width: 115%;
+  height: 592px;
   box-shadow: 5px 5px 5px rgb(92, 92, 92);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .question {
   font-weight: 600;
   font-size: 20px;
   color: black;
   align-content: center;
-  padding-top: 170px;
-  padding-left: 26px;
-  padding-right: 26px;
+  padding-top: 30%;
+  padding-left: 9%;
+  padding-right: 9%;
 }
 
 #next {
