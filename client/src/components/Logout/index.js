@@ -11,13 +11,11 @@ function Logout() {
   };
 
   return (
-    <div>
       <GoogleLogout
         clientId={clientId}
         buttonText="Logout"
         onLogoutSuccess={onSuccess}
       ></GoogleLogout>
-    </div>
   );
 }
 
