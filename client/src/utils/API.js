@@ -18,11 +18,12 @@ export default {
     return axios.post("/api/books", bookData);
   // Get user data upon login
   },
-  getUser: function () {
-    return axios.get("/api/user");
-  },
+  //* this is not working
+  // getUser: function (user) {
+  //   return axios.get("/api/save", { params: { q: user } });
+  // },
   // Save user data
-  saveUser: function (userData) {
-    return axios.post("/api/user", userData);
+  saveUser: function(userData) {
+    return axios.post("/api/save", userData);
   }
 };
