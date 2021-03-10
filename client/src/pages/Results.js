@@ -18,9 +18,6 @@ function Results() {
         <h4 align="center">Compare your results to others</h4>
         <DataTable />
       </div>
-      <button id="play">
-        <img src={PiggyBankBtn} />
-      </button>
     </div>
   );
 }
