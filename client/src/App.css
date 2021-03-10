@@ -22,7 +22,7 @@ body {
   flex-grow: 1;
   color: white;
   font-weight: 900;
-  background-image: linear-gradient(white, #3e58b6);
+  background-image: linear-gradient(white, lightblue);
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 25px;
@@ -45,7 +45,7 @@ p {
 button {
   margin-top: 20px;
   border-radius: 20px;
-  background-color: inherit;
+  background-color: white;
   border: none;
   box-shadow: 3px 3px 2px black;
 }

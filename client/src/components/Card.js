@@ -45,20 +45,16 @@ function Card({ question, onAnswer }) {
     <div className="container">
       <div className="card">
         <div className="question" align="center">
-          {/* <h4>{category}</h4>
-          <h4>Number of tax returns:{returns}</h4>
-          <h4>Total Income:{base}</h4> */}
+          <p className="category">{question && question.category}</p>
 
-          <br />
-          {question && question.category}
-          <br />
+          <p className="returns">
+            Amount of Tax Returns: {question && question.returns}
+          </p>
 
-          <br />
-          {question && question.returns}
-          <br />
-          <br />
-          {question && question.base}
-          <br />
+          <p className="base">
+            Base Taxes Collected: {question && question.base}
+          </p>
+
           <form noValidate autoComplete="off">
             {!value ? (
               <h2>no data</h2>
@@ -107,14 +103,11 @@ function Card({ question, onAnswer }) {
             aria-labelledby="continous-slider"
           /> */}
 
-          <br />
-          <h4>Amount of taxes paid:{question && question.amount}</h4>
+          <p className="taxes-paid">
+            Amount of taxes paid: {question && question.amount}
+          </p>
 
-          <br />
-          <br />
-          {question && question.caption}
-          <br />
-          <br />
+          <p className="caption">{question && question.caption}</p>
           <button id="next" onClick={onAnswer}>
             Next Question
           </button>
