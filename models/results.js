@@ -5,7 +5,6 @@ const resultSchema = new Schema(
   {
     userName: { type: String, required: true },
     answers: [],
-    results: [],
     votes: Number,
   },
   {
