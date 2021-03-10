@@ -22,7 +22,7 @@ function Question() {
     API.getAllTax()
       .then((res) => {
         setQuestions(res.data);
-        console.log(questions);
+        // console.log(questions);
         // setIndex(0);
         // console.log(index);
       })
