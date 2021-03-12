@@ -3,6 +3,7 @@ import USPB_LOGO from "../images/USPB_LOGO.png";
 import Card from "../components/Card";
 import "./App.css";
 import API from "../utils/API";
+import GoogleLogin from "react-google-login";
 
 function Question() {
   //reamember to make index hook
@@ -33,7 +34,11 @@ function Question() {
 
   // **OnAnswer function called on button click
   const onAnswer = () => {
-    setIndex(index + 1);
+    if (index <= 16) {
+      setIndex(index + 1);
+    } else {
+      GoogleLogin()
+    }
   };
   // ! call that post route with data
 
