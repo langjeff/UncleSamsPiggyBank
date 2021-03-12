@@ -19,10 +19,10 @@ export default {
   // Get user data upon login
   },
   //* this is not working
-  // getUser: function (user) {
-  //   return axios.get("/api/save", { params: { q: user } });
-  // },
-  // Save user data
+  getUser: function (user) {
+    return axios.get("/api/save", { params: { q: user } });
+  },
+  //* this works
   saveUser: function(userData) {
     return axios.post("/api/save", userData);
   }

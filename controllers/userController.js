@@ -10,12 +10,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   //* this is not working
-  // get: function(req, res) {
-  //   console.log(req.body);
-  //   db.Users.find({
-  //     username: { $regex: new RegExp(req.query.q, 'i')}
-  //   })
-  //     .then(user => res.json(user))
-  //     .catch(err => res.status(422).end());
-  // }
+  get: function(req, res) {
+    console.log(req.query);
+    db.Users.find({
+      username: { $regex: new RegExp(req.query.q, 'i')}
+    })
+      .then(user => res.json(user))
+      .catch(err => res.status(422).end());
+  }
 };
