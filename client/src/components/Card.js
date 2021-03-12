@@ -24,7 +24,7 @@ function Card({ question, onAnswer }) {
   );
 
   useEffect(() => {
-    setValue(4);
+    // setValue(4);
   }, []);
 
   const handleChange = (event, newValue) => {
@@ -56,7 +56,23 @@ function Card({ question, onAnswer }) {
           </p>
 
           <form noValidate autoComplete="off">
-            {!value ? (
+            {question && question.rate ? (
+              <TextField
+                id="outlined-basic"
+                label="Percentage Paid"
+                variant="outlined"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">%</InputAdornment>
+                  ),
+                }}
+                value={parseInt(Math.floor(question.rate * 100))}
+              ></TextField>
+            ) : (
+              console.log("not available")
+            )}
+
+            {/* {!value ? (
               <h2>no data</h2>
             ) : (
               <TextField
@@ -71,7 +87,7 @@ function Card({ question, onAnswer }) {
                   ),
                 }}
               />
-            )}
+            )} */}
           </form>
 
           {/* <h5 id="discrete-slider-always" gutterBottom>
@@ -108,7 +124,7 @@ function Card({ question, onAnswer }) {
           </p>
 
           <p className="caption">{question && question.caption}</p>
-          <button id="next" onClick={onAnswer}>
+          <button id="next" onClick={onAnswer, arrayPush}>
             Next Question
           </button>
         </div>
