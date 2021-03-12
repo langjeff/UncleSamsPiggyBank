@@ -6,5 +6,5 @@ const userController = require("../../controllers/userController");
 // Matches with client side "/api/user"
 router.route("/")
     .post(userController.create)
-    // .get(userController.find);
+    .get(userController.get);
 module.exports = router;

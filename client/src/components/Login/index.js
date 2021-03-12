@@ -7,60 +7,60 @@ const clientId =
   '899511652234-cls2folp54noje6mq3njs0c6f8ubqg9s.apps.googleusercontent.com';
 
 function Login() {
-  const [user, setUser] = useState();
-  const [userSearch, setUserSearch] = useState("");
+  const [user, setUser] = useState([]);
+  const [userSearch, setUserSearch] = useState();
+  // const testEmail = "nothing@gmail.com";
+
 
   const onSuccess = (res) => {
+    setUserSearch(res.profileObj.email);
     //TODO send a request to DB to identify the user,
     // *If the user exists pass back the info
     // *If user doens't exist create user in DB
     console.log(`Login Success for ${res.profileObj.email}`);
     //* this will be used once checkUser is working
-    // setUserSearch(res.profileObj);
+    // console.log(userSearch);
     //* this is to validate post is working
-    setUser(res.profileObj);
-    // checkUser();
-    saveUser();
+    // setUser(res.profileObj);
+    checkUser();
+    // saveUser();
   };
-    // checks to see if user exists in database
-    // if YES return results of that user
-    // if NO save new user and data then return results of that user
+    //* checks to see if user exists in database
+    //* if YES return results of that user
+    //* if NO save new user and data then return results of that user
     
-    //* saveUser works when called
-    function saveUser() {
-      // event.preventDefault();
-      console.log(user.email);
-      API.saveUser({
-        username: user.email
-      })
-      // .then(res => loadUser())
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-    };
-
     // call function to check if user exists in database
     // useEffect(() => {
-    //   checkUser()
-    // }, [])
+      //   checkUser()
+      // }, [])
 
-    // function checks to see if user exists
-    //* checkUser is still a work in progress. Need to work out 
-    // function checkUser(e) {
-    //   e.preventDefault();
-    //   API.getUser(userSearch)
-    //     .then(res => setUser(res.data))
-    //     console.log(user)
-    //     .catch(err => console.log(err));
-    //     // filter search by email to see if they exist
-    //     // if (user !== res.profileObj.email) {
-    //     //   // if user does not exist call saveUser function to save data
-    //     //   saveUser()
-    //     // }
-    //     // else {
-    //     //   // if user exists call loadUser function to display data
-    //     //   loadUser()
-    //     // }
-    // };
+      //* saveUser works when called
+      function saveUser() {
+        // console.log(user.email);
+        API.saveUser({
+          username: user.email
+        })
+        // .then(res => loadUser())
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+      };
+
+    //* checkUser checks to see if the user exists in the DB
+    function checkUser() {
+      API.getUser(userSearch)
+        .then(res => setUser(res.data))
+        .catch(err => console.log(err));
+        logicTest()
+    };
+
+    //* logic test - if user already exists call loadUser function, if NOT calls saveUser function
+    function logicTest() {
+      if (user[0].username !== userSearch) {
+          saveUser()
+      } else {
+        console.log("This works")
+      }
+    };
     // function saves users data if they do not exist
 
 
