@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import API from '../../utils/API';
 // refresh token
@@ -14,6 +14,7 @@ function Login() {
 
   const onSuccess = (res) => {
     setUserSearch(res.profileObj.email);
+    console.log(res);
     //TODO send a request to DB to identify the user,
     // *If the user exists pass back the info
     // *If user doens't exist create user in DB
