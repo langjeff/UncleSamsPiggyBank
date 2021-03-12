@@ -5,6 +5,7 @@ import Questions from "./pages/Questions";
 import Results from "./pages/Results";
 import Save from "./pages/Save";
 import Navbar from "./components/Navbar/Navbar";
+import Login from "./components/Login/index";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/questions" component={Questions} />
         <Route exact path="/results" component={Results} />
         <Route exact path="/save" component={Save} />
+        <Route exact path="/login" component={Login} />
       </div>
     </Router>
   );
