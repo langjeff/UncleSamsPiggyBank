@@ -1,14 +1,19 @@
-import React from 'react'
+import React from "react";
 import PiggyBankBtn from "../../images/PiggyBankBtn.png";
+import History from "../utils/history";
 
 function Button() {
-    return (
-        <>
-            <button id="play">
-                <img src={PiggyBankBtn} />
-            </button>
-        </>
-    )
+  const clickAction = () => {
+    History.push("/login");
+  };
+
+  return (
+    <>
+      <button id="play">
+        <img src={PiggyBankBtn} />
+      </button>
+    </>
+  );
 }
 
-export default Button
+export default Button;

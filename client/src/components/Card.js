@@ -8,61 +8,70 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
+import Login from "../components/Login/index";
+import History from "../utils/history";
+import API from "../utils/API";
 
-function Card({ question, onAnswer }) {
-  // const value = question && Math.floor(question.rate * 100);
-  const defaultValue = question && parseInt(Math.floor(question.rate * 100));
-  console.log(defaultValue);
-  console.log(question);
+function Card({ question }) {
+  const [value, setValue] = useState();
+  const [index, setIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState({});
+  // **OnAnswer function called on button click
 
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {}, []);
+  const onAnswer = () => {
+    if (index <= 14) {
+      setIndex(index + 1);
+      console.log(index);
+      //* how is jon getting data from the card?
+    } else {
+      console.log("done");
+      History.push("/login");
+    }
+  };
+  useEffect(() => {
+    setCurrentQuestion(question[index]);
+  }, [question, index]);
 
   const handleChange = (event, newValue) => {
     event.preventDefault();
     newValue = event.currentTarget.value;
-    // console.log(newValue);
-    setValue(newValue);
+    console.log(newValue);
   };
 
   return (
     <div className="container">
       <div className="card">
         <div className="question" align="center">
-          <p className="category">{question && question.category}</p>
+          {/* ! put in ternary for question.type eval. */}
+          <p className="returns">
+            Tax Bracket: {currentQuestion && currentQuestion.category}
+          </p>
 
           <p className="returns">
-            Amount of Tax Returns: {question && question.returns}
+            # of Tax Returns: {currentQuestion && currentQuestion.returns}
           </p>
-
-          <p className="base">
-            Base Taxes Collected: {question && question.base}
+          <p className="returns">
+            Average Tax Paid:{" "}
+            {currentQuestion && currentQuestion.rate
+              ? `${parseInt(Math.floor(currentQuestion.rate * 100))}%`
+              : console.log("not available")}
           </p>
-
-          <form noValidate autoComplete="off">
-            {question && question.rate ? (
-              <TextField
-                id="outlined-basic"
-                label="Percentage Paid"
-                variant="outlined"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">%</InputAdornment>
-                  ),
-                }}
-                value={parseInt(Math.floor(question.rate * 100))}
-              ></TextField>
-            ) : (
-              console.log("not available")
-            )}
-          </form>
-
           <p className="taxes-paid">
-            Amount of taxes paid: {question && question.amount}
+            Amount of taxes: {currentQuestion && currentQuestion.amount}
           </p>
-
-          <p className="caption">{question && question.caption}</p>
+          <p className="taxes-paid">What should there tax rate be?</p>
+          <form noValidate autoComplete="off">
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">%</InputAdornment>
+                ),
+              }}
+              onChange={handleChange}
+            ></TextField>
+          </form>
           <button id="next" onClick={onAnswer}>
             Next Question
           </button>
