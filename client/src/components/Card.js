@@ -13,18 +13,30 @@ import History from "../utils/history";
 import API from "../utils/API";
 
 function Card({ question }) {
-  const [answers, setAnswers] = ([]);
+  const [answers, setAnswers] = useState([]);
   const [value, setValue] = useState();
   const [index, setIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState({});
   // **OnAnswer function called on button click
 
-  const onAnswer = () => {
+  const onAnswer = (event) => {
+    console.log(currentQuestion);
+
+    // console.log(newAmount);
     if (index <= 14) {
+      console.log(event.currentTarget);
       setIndex(index + 1);
       console.log(index);
-      // setAnswers = answers.push({onclick data coming back})
-
+      setAnswers([
+        ...answers,
+        {
+          category: currentQuestion.category,
+          type: currentQuestion.type,
+          base: currentQuestion.base,
+          rate: value,
+          amount: (currentQuestion.base * value) / 100,
+        },
+      ]);
     } else {
       console.log("done");
       // API.post(answers: answers)
@@ -35,10 +47,14 @@ function Card({ question }) {
     setCurrentQuestion(question[index]);
   }, [question, index]);
 
+  useEffect(() => {
+    console.log(answers);
+  }, [answers]);
+
   const handleChange = (event, newValue) => {
     event.preventDefault();
     newValue = event.currentTarget.value;
-    console.log(newValue);
+    setValue(newValue);
   };
 
   return (
@@ -75,7 +91,15 @@ function Card({ question }) {
               onChange={handleChange}
             ></TextField>
           </form>
-          <button id="next" onClick={onAnswer}>
+          <button
+            id="next"
+            onClick={onAnswer}
+            // category={currentQuestion && currentQuestion.category}
+            // type={currentQuestion && currentQuestion.type}
+            // base={currentQuestion && currentQuestion.base}
+            rate={value}
+            // amount={currentQuestion && currentQuestion.base * value}
+          >
             Next Question
           </button>
         </div>
