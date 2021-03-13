@@ -7,7 +7,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/unclesam");
 
 const dataSeed = [
   {
-    category: "People making under $50,000 a year",
+    category: "Less than $50k a year",
     type: "income",
     returns: 88928000,
     base: 1759742000000,
@@ -17,7 +17,7 @@ const dataSeed = [
       "Over 88 million people in the US make less than $50,000.  This is more than 50% of the population, and they make up 4% of income taxes paid to the government.",
   },
   {
-    category: "People making between $50k and $200k a year",
+    category: "Greater than $50k & less than $200k",
     type: "income",
     returns: 56293000,
     base: 5385519000000,
@@ -27,7 +27,7 @@ const dataSeed = [
       "56 million people in the US make between $50,000 and $200,000 a year.  This is 37% of the population, and they make up 33% of income taxes paid to the government.",
   },
   {
-    category: "People making between $200k and $500k a year",
+    category: "Greater than $200k and less than $500k",
     type: "income",
     returns: 6906000,
     base: 1971306000000,
@@ -37,7 +37,7 @@ const dataSeed = [
       "Only 6 million people in the US make between $200,000 and $500,000 a year.  This is 4% of the population, and they make up 21% of income taxes paid to the government.",
   },
   {
-    category: "People making between $500k and $1m a year",
+    category: "Greater than $500k and less than $1m",
     type: "income",
     returns: 1108000,
     base: 746778000000,
@@ -47,7 +47,7 @@ const dataSeed = [
       "Only 1% of people make between $500k and $1 million a year.  They make up 11% of income taxes paid to the government.",
   },
   {
-    category: "People making between more than $1m a year",
+    category: "Greater than $1m a year",
     type: "income",
     returns: 540000,
     base: 1780074000000,

@@ -96,7 +96,8 @@ button:hover {
   background-image: url("../images/QuestionCard.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: fit-content;
+  height: 500px;
+  width: 400px;
   box-shadow: 5px 5px 5px rgb(92, 92, 92);
   margin-left: 20%;
   margin-right: 20%;
@@ -107,8 +108,8 @@ button:hover {
   color: black;
   align-content: center;
   padding-top: 30%;
-  padding-left: 9%;
-  padding-right: 9%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 #next {
