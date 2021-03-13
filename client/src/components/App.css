@@ -68,11 +68,18 @@ h4 {
 p {
   align-content: center;
   font-weight: 600;
+  margin: 12px;
+}
+.taxes-paid {
+  color: green;
+  align-content: center;
+  font-weight: 700;
+  margin: 15px;
 }
 .category {
   color: #3e58b6;
   font-weight: bolder;
-  margin-top: 8%;
+  margin-top: 7%;
 }
 .caption {
   justify-content: contain;
@@ -96,7 +103,7 @@ button:hover {
   background-image: url("../images/QuestionCard.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 506px;
   width: 400px;
   box-shadow: 5px 5px 5px rgb(92, 92, 92);
   margin-left: 20%;
