@@ -33,7 +33,7 @@ function Card({ question }) {
       ]);
     } else {
       console.log("done");
-      // API.post(answers: answers)
+      API.saveAnswers({answers: [answers]});
       // History.push(results page);
     }
   };
