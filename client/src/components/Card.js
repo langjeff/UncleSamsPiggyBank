@@ -13,6 +13,7 @@ import History from "../utils/history";
 import API from "../utils/API";
 
 function Card({ question }) {
+  const [answers, setAnswers] = ([]);
   const [value, setValue] = useState();
   const [index, setIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState({});
@@ -22,10 +23,12 @@ function Card({ question }) {
     if (index <= 14) {
       setIndex(index + 1);
       console.log(index);
-      //* how is jon getting data from the card?
+      // setAnswers = answers.push({onclick data coming back})
+
     } else {
       console.log("done");
-      History.push("/login");
+      // API.post(answers: answers)
+      // History.push(results page);
     }
   };
   useEffect(() => {

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const resultSchema = new Schema(
   {
-    userName: { type: String, required: true },
+    userName: { type: String },
     answers: [],
     votes: Number,
   },
