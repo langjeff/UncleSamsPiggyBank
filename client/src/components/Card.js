@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
-import IconButton from "@material-ui/core/IconButton";
-import Input from "@material-ui/core/Input";
-import FilledInput from "@material-ui/core/FilledInput";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
-import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
 import Login from "../components/Login/index";
 import History from "../utils/history";
 import API from "../utils/API";
+import NumberFormat from "react-number-format";
 
 function Card({ question }) {
   const [answers, setAnswers] = useState([]);
@@ -62,12 +56,18 @@ function Card({ question }) {
       <div className="card">
         <div className="question" align="center">
           {/* ! put in ternary for question.type eval. */}
-          <p className="returns">
+          <p className="category">
             Tax Bracket: {currentQuestion && currentQuestion.category}
           </p>
 
           <p className="returns">
-            # of Tax Returns: {currentQuestion && currentQuestion.returns}
+            # of Tax Returns:
+            <NumberFormat
+              value={currentQuestion && currentQuestion.returns}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={" "}
+            />
           </p>
           <p className="returns">
             Average Tax Paid:{" "}
@@ -75,10 +75,15 @@ function Card({ question }) {
               ? `${parseInt(Math.floor(currentQuestion.rate * 100))}%`
               : console.log("not available")}
           </p>
-          <p className="taxes-paid">
-            Amount of taxes: {currentQuestion && currentQuestion.amount}
+          <p className="returns">
+            Amount of taxes: $
+            <NumberFormat
+              value={currentQuestion && currentQuestion.amount}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
           </p>
-          <p className="taxes-paid">What should there tax rate be?</p>
+          <p className="taxes-paid">What should their tax rate be?</p>
           <form noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
