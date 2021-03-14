@@ -7,8 +7,6 @@ import Login from "../components/Login/index";
 import History from "../utils/history";
 
 function Question() {
-  //reamember to make index hook
-
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {

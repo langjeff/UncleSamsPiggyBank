@@ -3,29 +3,29 @@ import USPB_LOGO from "../images/USPB_LOGO.png";
 import PiggyBankBtn from "../images/PiggyBankBtn.png";
 import Guy from "../images/Guy.png";
 import "./App.css";
+import History from "../utils/history";
 
 function Home() {
+  const reRoute = () => {
+    History.push("/questions");
+    window.location.reload(false);
+  };
+
   return (
     <div className="container">
       <div className="logo">
         <img src={USPB_LOGO} alt="Uncle Sam's Piggy Bank Logo" />
       </div>
       <div className="message">
-        <h2 align="center">Welcome to Uncle Sam's Piggy Bank</h2>
-        <p align="center">
-          We will ask you some questions about how much people should pay in
-          taxes,<br></br>and how much the government should spend on programs.
-        </p>
-        <p align="center">
-          We will see how much better we are than the government at balancing
-          the budget!
-        </p>
+        <h2 align="center">Uncle Sam's Piggy Bank is Broken!</h2>
+        <h2>Open the Piggy Bank below to fix it!</h2>
+
         <div className="guy">
           <img src={Guy} alt="Monopoly Guy"></img>
         </div>
       </div>
       <button id="play">
-        <img src={PiggyBankBtn} />
+        <img src={PiggyBankBtn} onClick={reRoute} />
       </button>
     </div>
   );
