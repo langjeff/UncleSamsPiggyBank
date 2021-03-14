@@ -1,25 +1,23 @@
+import API from '../utils/API';
 import React, { useState, useEffect } from "react";
 import USPB_LOGO from "../images/USPB_LOGO.png";
-import DataTable from "../components/DataTable";
-import API from '../utils/API';
+import Grid from "../components/grid";
 import "./App.css";
 
 function Answer() {
-    const [answer, setAnswer] = useState([{}]);
-    presentData();
+    const [answer, setAnswer] = useState([]);
 
-  useEffect(() => {
-    getLast()
-  },[])
-  
-    function getLast() {
+    useEffect(() => {
+      getData();      
+    },[])
+
+    function getData() {
       API.getLastAnswer()
-        .then(res => setAnswer(res.data))
-        .catch(err => console.log(err))
-    };
-
-    function presentData() {
-        console.log(answer[0].answers)
+      .then((res) => {
+        setAnswer(res.data[0].answers[0]);
+        console.log(res.data[0].answers[0]);
+      })
+      .catch(err => console.log(err))
     };
 
   return (
@@ -31,9 +29,8 @@ function Answer() {
           className="Qlogo"
         />
       </div>
-      <div className="data-container">
-        <h4 align="center">Compare your results to others</h4>
-        <DataTable />
+      <div>
+        <Grid answer={answer} />
       </div>
     </div>
   );
