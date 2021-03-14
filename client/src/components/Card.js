@@ -5,45 +5,55 @@ import Login from "../components/Login/index";
 import History from "../utils/history";
 import API from "../utils/API";
 import NumberFormat from "react-number-format";
+import Numeral from "numeral";
 
 function Card({ question }) {
   const [answers, setAnswers] = useState([]);
   const [value, setValue] = useState();
   const [index, setIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState({});
-  // **OnAnswer function called on button click
 
   const onAnswer = (event) => {
-    console.log(currentQuestion);
-
-    // console.log(newAmount);
+    event.preventDefault();
     if (index <= 14) {
-      console.log(event.currentTarget);
       setIndex(index + 1);
-      console.log(index);
-      setAnswers([
-        ...answers,
-        {
-          category: currentQuestion.category,
-          type: currentQuestion.type,
-          base: currentQuestion.base,
-          rate: value,
-          amount: (currentQuestion.base * value) / 100,
-        },
-      ]);
+      if (currentQuestion.type === "income") {
+        setAnswers([
+          ...answers,
+          {
+            category: currentQuestion.category,
+            type: currentQuestion.type,
+            base: currentQuestion.base,
+            rate: value / 100,
+            amount: (currentQuestion.base * value) / 100,
+          },
+        ]);
+      } else {
+        setAnswers([
+          ...answers,
+          {
+            category: currentQuestion.category,
+            type: currentQuestion.type,
+            amount: value * 12,
+          },
+        ]);
+      }
     } else {
-      console.log("done");
-      API.saveAnswers({answers: [answers]});
-      // History.push(results page);
+      var sumIncome = 0;
+      var sumSpending = 0;
+      answers.map(function (answer) {
+        if (answer.type === "income") {
+          sumIncome = sumIncome + answer.amount;
+        } else {
+          sumSpending = sumSpending + answer.amount;
+        }
+      });
+      const result = sumIncome - sumSpending;
+      console.log(result);
+      API.saveAnswers({ answers: [answers] });
+      History.push("/answers");
     }
   };
-  useEffect(() => {
-    setCurrentQuestion(question[index]);
-  }, [question, index]);
-
-  useEffect(() => {
-    console.log(answers);
-  }, [answers]);
 
   const handleChange = (event, newValue) => {
     event.preventDefault();
@@ -51,60 +61,95 @@ function Card({ question }) {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    setCurrentQuestion(question[index]);
+  }, [question, index]);
+
+  // useEffect(() => {
+  //   console.log(answers);
+  // }, [answers]);
+
   return (
     <div className="container">
       <div className="card">
         <div className="question" align="center">
-          {/* ! put in ternary for question.type eval. */}
-          <p className="category">
-            Tax Bracket: {currentQuestion && currentQuestion.category}
-          </p>
+          {currentQuestion && currentQuestion.type === "income" ? (
+            <>
+              <p className="category">
+                Tax Bracket: {currentQuestion && currentQuestion.category}
+              </p>
+              {currentQuestion && currentQuestion.return !== 0 ? (
+                <>
+                  <p className="returns">
+                    # of Tax Returns:{" "}
+                    {Numeral(currentQuestion && currentQuestion.returns).format(
+                      "0a"
+                    )}
+                  </p>
+                </>
+              ) : (
+                <> </>
+              )}
+              <p className="returns">
+                Average Tax Paid:{" "}
+                {currentQuestion && currentQuestion.rate
+                  ? `${parseInt(Math.floor(currentQuestion.rate * 100))}%`
+                  : console.log("not available")}
+              </p>
+              <p className="returns">
+                Amount of taxes:{" "}
+                {Numeral(currentQuestion && currentQuestion.amount).format(
+                  "($ 0.0a)"
+                )}
+              </p>
+              <p className="taxes-paid">What should their tax rate be?</p>
+              <form noValidate autoComplete="off">
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">%</InputAdornment>
+                    ),
+                  }}
+                  onChange={handleChange}
+                ></TextField>
+              </form>
+            </>
+          ) : (
+            <>
+              <p className="category">
+                Gov't Spending: {currentQuestion && currentQuestion.category}
+              </p>
 
-          <p className="returns">
-            # of Tax Returns:
-            <NumberFormat
-              value={currentQuestion && currentQuestion.returns}
-              displayType={"text"}
-              thousandSeparator={true}
-              prefix={" "}
-            />
-          </p>
-          <p className="returns">
-            Average Tax Paid:{" "}
-            {currentQuestion && currentQuestion.rate
-              ? `${parseInt(Math.floor(currentQuestion.rate * 100))}%`
-              : console.log("not available")}
-          </p>
-          <p className="returns">
-            Amount of taxes: $
-            <NumberFormat
-              value={currentQuestion && currentQuestion.amount}
-              displayType={"text"}
-              thousandSeparator={true}
-            />
-          </p>
-          <p className="taxes-paid">What should their tax rate be?</p>
-          <form noValidate autoComplete="off">
-            <TextField
-              id="outlined-basic"
-              variant="outlined"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                ),
-              }}
-              onChange={handleChange}
-            ></TextField>
-          </form>
-          <button
-            id="next"
-            onClick={onAnswer}
-            // category={currentQuestion && currentQuestion.category}
-            // type={currentQuestion && currentQuestion.type}
-            // base={currentQuestion && currentQuestion.base}
-            rate={value}
-            // amount={currentQuestion && currentQuestion.base * value}
-          >
+              <p className="returns">
+                Annual Budget:{" "}
+                {Numeral(currentQuestion && currentQuestion.amount).format(
+                  "($ 0.0a)"
+                )}
+              </p>
+              <p className="returns">
+                Monthly Budget:{" "}
+                {Numeral(currentQuestion && currentQuestion.amount / 12).format(
+                  "$0,0"
+                )}
+              </p>
+              <p className="taxes-paid">What should the monthly budget be?</p>
+              <form noValidate autoComplete="off">
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">$</InputAdornment>
+                    ),
+                  }}
+                  onChange={handleChange}
+                ></TextField>
+              </form>
+            </>
+          )}
+          <button id="next" onClick={onAnswer} rate={value}>
             Next Question
           </button>
         </div>
