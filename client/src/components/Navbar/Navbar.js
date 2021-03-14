@@ -17,7 +17,7 @@ class Navbar extends Component {
         </h1>
         <div className="menu-icon" onClick={this.handleClick}>
           <i
-            classname={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
+            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
           ></i>
         </div>
 

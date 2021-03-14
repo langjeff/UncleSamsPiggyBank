@@ -18,4 +18,10 @@ module.exports = {
       // .then((user) => res.json(user))
       .catch((err) => res.status(422).end());
   },
+  //* this is working
+  findLast: function(req, res) {
+    db.Results.find({}).sort({_id:-1}).limit(1)
+      .then(answer => res.json(answer))
+      .catch(err => res.status(422).json(err));
+  },
 };
