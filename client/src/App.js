@@ -18,6 +18,7 @@ function App() {
         <Route exact path="/results" component={Results} />
         <Route exact path="/save" component={Save} />
         <Route exact path="/login" component={Login} />
+        {/* <Route exact path="/answers" component={Answers} /> */}
       </div>
     </Router>
   );
