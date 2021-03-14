@@ -18,12 +18,16 @@ export default {
     return axios.post("/api/answers", answers);
   // Get user data upon login
   },
-  //* this is not working
+  //* this works
   getUser: function (user) {
     return axios.get("/api/save", { params: { q: user } });
   },
   //* this works
   saveUser: function(userData) {
     return axios.post("/api/save", userData);
-  }
+  },
+  //* this works
+  getLastAnswer: function () {
+    return axios.get("/api/answers");
+  },
 };

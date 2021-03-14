@@ -5,18 +5,21 @@ import API from '../utils/API';
 import "./App.css";
 
 function Answer() {
-    const [user, setUser] = useState([]);
-    const [userSearch, setUserSearch] = useState();
+    const [answer, setAnswer] = useState([{}]);
+    presentData();
 
-    useEffect(() => {
-        checkUser()
-      }, [])
+  useEffect(() => {
+    getLast()
+  },[])
+  
+    function getLast() {
+      API.getLastAnswer()
+        .then(res => setAnswer(res.data))
+        .catch(err => console.log(err))
+    };
 
-    function checkUser() {
-      API.getUser(userSearch)
-        .then(res => setUser(res.data))
-        .catch(err => console.log(err));
-        console.log(user);
+    function presentData() {
+        console.log(answer[0].answers)
     };
 
   return (

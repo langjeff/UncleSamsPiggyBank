@@ -9,7 +9,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  //* this is not working
+  //* this is working
   get: function(req, res) {
     console.log(req.query);
     db.Users.find({

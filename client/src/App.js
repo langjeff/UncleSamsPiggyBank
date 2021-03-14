@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Questions from "./pages/Questions";
 import Results from "./pages/Results";
 import Save from "./pages/Save";
+import Answer from "./pages/Answer";
 import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/Login/index";
 import "./App.css";
@@ -15,6 +16,7 @@ function App() {
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/questions" component={Questions} />
+        <Route exact path="/answer" component={Answer} />
         <Route exact path="/results" component={Results} />
         <Route exact path="/save" component={Save} />
         <Route exact path="/login" component={Login} />
