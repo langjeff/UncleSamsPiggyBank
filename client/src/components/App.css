@@ -21,19 +21,25 @@ body {
   justify-content: center;
   align-items: center;
   opacity: 100%;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 0%;
+  margin-right: 0%;
 }
 .Qlogo {
   width: 60%;
   padding-left: 20%;
 }
 
+.MuiDataGrid-viewport {
+  margin-top: -500px;
+}
 .MuiDataGrid-root {
   background-image: linear-gradient(white, lightblue);
-  display: contents;
 }
-
+.MuiDataGrid-colCellTitle {
+  color: #3e58b6;
+  font-weight: 800 !important;
+  text-shadow: 2px 2px 2px lightblue;
+}
 .message {
   flex-grow: 1;
   color: white;
@@ -96,7 +102,7 @@ button {
 }
 
 button:hover {
-  background-color: lightgray; /* Green */
+  background-color: lightblue;
 }
 
 .card {
@@ -104,8 +110,8 @@ button:hover {
   background-image: url("../images/QuestionCard.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 506px;
-  width: 400px;
+  height: 538px;
+  width: 425px;
   box-shadow: 5px 5px 5px rgb(92, 92, 92);
   margin-left: 20%;
   margin-right: 20%;
@@ -135,10 +141,7 @@ button:hover {
   font-weight: 700;
   background-color: green; /* Green */
 }
-.guy {
-  width: 200px;
-  align-content: center;
-}
+
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -1,7 +1,6 @@
 import React from "react";
 import USPB_LOGO from "../images/USPB_LOGO.png";
 import DataTable from "../components/DataTable";
-import PiggyBankBtn from "../images/PiggyBankBtn.png";
 import "./App.css";
 
 function Results() {
