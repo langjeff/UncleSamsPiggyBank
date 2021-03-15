@@ -60,12 +60,16 @@ h2 {
 }
 h4 {
   color: white;
-  background-color: #3e58b6;
+  background-image: linear-gradient(lightblue, #3e58b6);
   align-content: center;
   font-weight: 700;
-  border-radius: 15px;
-  padding: 10px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 9px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px 2px #3e58b6;
 }
 h5 {
   color: green;
@@ -87,7 +91,7 @@ button {
 }
 
 button:hover {
-  background-color: lightgray; /* Green */
+  background-color: lightblue; /* Green */
 }
 
 .card {
@@ -124,7 +128,7 @@ button:hover {
   background-color: green; /* Green */
 }
 .guy {
-  padding-left: 32%;
+  padding-left: 22%;
 }
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
