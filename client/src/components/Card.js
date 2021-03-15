@@ -39,19 +39,10 @@ function Card({ question }) {
         ]);
       }
     } else {
-      var sumIncome = 0;
-      var sumSpending = 0;
-      answers.map(function (answer) {
-        if (answer.type === "income") {
-          sumIncome = sumIncome + answer.amount;
-        } else {
-          sumSpending = sumSpending + answer.amount;
-        }
-      });
-      const result = sumIncome - sumSpending;
-      console.log(result);
+
       API.saveAnswers({ answers: [answers] });
       History.push("/answers");
+      window.location.reload(false);
     }
   };
 

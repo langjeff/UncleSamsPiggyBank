@@ -1,24 +1,24 @@
-import API from '../utils/API';
+import API from "../utils/API";
 import React, { useState, useEffect } from "react";
 import USPB_LOGO from "../images/USPB_LOGO.png";
 import Grid from "../components/grid";
 import "./App.css";
 
 function Answer() {
-    const [answer, setAnswer] = useState([]);
+  const [answer, setAnswer] = useState([]);
 
-    useEffect(() => {
-      getData();      
-    },[])
+  useEffect(() => {
+    getData();
+  }, []);
 
-    function getData() {
-      API.getLastAnswer()
+  function getData() {
+    API.getLastAnswer()
       .then((res) => {
         setAnswer(res.data[0].answers[0]);
         console.log(res.data[0].answers[0]);
       })
-      .catch(err => console.log(err))
-    };
+      .catch((err) => console.log(err));
+  }
 
   return (
     <div className="container">
@@ -36,4 +36,4 @@ function Answer() {
   );
 }
 
-export default Answer
+export default Answer;
