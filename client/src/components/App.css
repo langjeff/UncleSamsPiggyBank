@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 100%;
+  /* opacity: 100%; */
 }
 .data-container {
   display: contents;
