@@ -4,6 +4,7 @@ const Results = require("../../controllers/results");
 // Matches with client side "/api/user"
 router.route("/")
     .post(Results.create)
-    .get(Results.findLast);
+    .get(Results.findLast)
+    .put(Results.update);
     
 module.exports = router;

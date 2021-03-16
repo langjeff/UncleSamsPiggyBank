@@ -6,6 +6,7 @@ import "./App.css";
 
 function Answer() {
   const [answer, setAnswer] = useState([]);
+  const [id, setID] = useState()
 
   useEffect(() => {
     getData();
@@ -15,8 +16,10 @@ function Answer() {
     API.getLastAnswer()
       .then((res) => {
         setAnswer(res.data[0].answers[0]);
-        console.log(res.data[0].answers[0]);
+        setID(res.data[0]._id);
+        // console.log(res.data[0]._id);
       })
+
       .catch((err) => console.log(err));
   }
 
@@ -30,7 +33,7 @@ function Answer() {
         />
       </div>
       <div>
-        <Grid answer={answer} />
+        <Grid answer={answer} id={id}/>
       </div>
     </div>
   );

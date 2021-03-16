@@ -30,4 +30,8 @@ export default {
   getLastAnswer: function () {
     return axios.get("/api/answers");
   },
+  //* this works
+  updateUser: function (user) {
+    return axios.put("/api/answers", user)
+  }
 };
