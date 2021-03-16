@@ -1,5 +1,7 @@
 import * as React from "react";
 import { DataGrid } from "@material-ui/data-grid";
+import Login from "../components/Login";
+import Logout from "../components/Logout";
 import "./App.css";
 
 const columns = [
@@ -7,7 +9,7 @@ const columns = [
   { field: "amount", headerName: "Amount", width: 300 },
 ];
 
-export default function grid({ answer }) {
+export default function grid({ answer, id }) {
   var sumIncome = 0;
   var sumSpending = 0;
   answer.map(function (answer) {
@@ -18,7 +20,7 @@ export default function grid({ answer }) {
     }
   });
   const result = sumIncome - sumSpending;
-  console.log(result);
+//   console.log(result);
 
   const rows = [];
   answer.map((data) =>
@@ -29,10 +31,12 @@ export default function grid({ answer }) {
     })
   );
 
-  console.log(rows);
+//   console.log(rows);
   return (
     <div style={{ height: 550, width: 740 }}>
       <DataGrid rows={rows} columns={columns} pageSize={15} />
+      <Login id={id}/>
+      <Logout />
     </div>
   );
 }

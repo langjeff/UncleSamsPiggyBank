@@ -24,4 +24,12 @@ module.exports = {
       .then(answer => res.json(answer))
       .catch(err => res.status(422).json(err));
   },
+  //* this is working
+  update: function(req, res) {
+    console.log(req.body)
+    db.Results
+      .findOneAndUpdate({_id: req.body._id}, req.body)
+      .then(username => res.json(username))
+      .catch(err => res.status(422).json(err));
+  },
 };
