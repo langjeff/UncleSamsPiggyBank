@@ -20,7 +20,7 @@ body {
   display: contents;
   justify-content: center;
   align-items: center;
-  opacity: 100%;
+  /* opacity: 100%; */
   margin-left: 0%;
   margin-right: 0%;
 }
