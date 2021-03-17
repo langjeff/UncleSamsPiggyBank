@@ -17,8 +17,8 @@ function Home() {
         <img src={USPB_LOGO} alt="Uncle Sam's Piggy Bank Logo" />
       </div>
       <div className="message">
-        <h2 align="center">Uncle Sam's Piggy Bank is Broken!</h2>
-        <h2>Open the Piggy Bank below to fix it!</h2>
+        <h2 align="center">Uncle Sam's Piggy Bank is broken!</h2>
+        <h2>Open the piggy bank below to fix it!</h2>
 
         <div className="guy">
           <img src={Guy} alt="Monopoly Guy"></img>
