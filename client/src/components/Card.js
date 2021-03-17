@@ -6,6 +6,8 @@ import History from "../utils/history";
 import API from "../utils/API";
 import NumberFormat from "react-number-format";
 import Numeral from "numeral";
+import Divider from "@material-ui/core/Divider";
+import Paper from "@material-ui/core/Paper";
 
 function Card({ question }) {
   const [answers, setAnswers] = useState([]);
@@ -39,7 +41,6 @@ function Card({ question }) {
         ]);
       }
     } else {
-
       API.saveAnswers({ answers: [answers] });
       History.push("/answers");
       window.location.reload(false);
@@ -145,6 +146,21 @@ function Card({ question }) {
           </button>
         </div>
       </div>
+      <Divider light />
+
+      <h3
+        style={{
+          width: "500px",
+          color: "white",
+          textAlign: "center",
+          backgroundColor: "#3e58b6",
+          font: "roboto",
+          margin: "12px",
+          padding: "14px"
+        }}
+      >
+        {currentQuestion && currentQuestion.caption}
+      </h3>
     </div>
   );
 }
