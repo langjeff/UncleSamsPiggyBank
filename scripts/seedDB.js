@@ -124,7 +124,7 @@ const dataSeed = [
     rate: 1,
     amount: 154984000000,
     caption:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar, dolor vel lobortis vehicula, justo mauris pellentesque nisl, ac ornare neque velit pharetra dui. Phasellus",
+      "The Department of Education provides for federal student aid for colleges, and provides around 8% of funding for local school districts around the country.  Their mission is to provide equal education in America.",
   },
   {
     category: "Department of Labor",
@@ -132,7 +132,7 @@ const dataSeed = [
     rate: 1,
     amount: 244026000000,
     caption:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar, dolor vel lobortis vehicula, justo mauris pellentesque nisl, ac ornare neque velit pharetra dui. Phasellus",
+      "The Department of Labor works to promote the rights of workers, help train the American workforce, improves working conditions, and assures work-related benefits and rights.",
   },
   {
     category: "Department of Agriculture",
@@ -140,7 +140,7 @@ const dataSeed = [
     rate: 1,
     amount: 224952000000,
     caption:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar, dolor vel lobortis vehicula, justo mauris pellentesque nisl, ac ornare neque velit pharetra dui. Phasellus",
+      "The Department of Agriculture works to help rural Americans thrive, promote agricultural production throughout the world, and manage natural resources through conservation.",
   },
   {
     category: "COVID-19 Relief Funds",
@@ -148,7 +148,7 @@ const dataSeed = [
     rate: 1,
     amount: 3500000000000,
     caption:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar, dolor vel lobortis vehicula, justo mauris pellentesque nisl, ac ornare neque velit pharetra dui. Phasellus",
+      "The Coronavirus Aid, Relief, and Economic Security (CARES) Act and the Coronavirus Response and Relief Supplemental Appropriations Act of 2021 provide fast and direct economic assistance for American workers, families, and small businesses, and preserve jobs for American industries.",
   },
 ];
 
