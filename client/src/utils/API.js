@@ -1,28 +1,20 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
+  //* Gets all books
   getAllTax: function () {
     return axios.get("/api/tax");
   },
-  // gets answers from db for a particular id
-  // getAnswers: function (id) {
-  //   return axios.get("/api/books/" + id);
-  // },
-  // // deletesAnswers from db for a particular id
-  // deleteAnswers: function (id) {
-  //   return axios.delete("/api/books/" + id);
-  // },
-  // Saves answers to db
+  //* Saves answers to db
   saveAnswers: function (answers) {
     return axios.post("/api/answers", answers);
   // Get user data upon login
   },
-  //* this works
+  //* this works NOT USED
   getUser: function (user) {
     return axios.get("/api/save", { params: { q: user } });
   },
-  //* this works
+  //* this works NOT USED
   saveUser: function(userData) {
     return axios.post("/api/save", userData);
   },
@@ -33,5 +25,9 @@ export default {
   //* this works
   updateUser: function (user) {
     return axios.put("/api/answers", user)
+  },
+  //* get all results
+  getResults: function () {
+    return axios.get("/api/results");
   }
 };
