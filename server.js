@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(routes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("/client/build")));
+  app.use(express.static("client/build")));
 }
 
 // Connect to the Mongo DB
