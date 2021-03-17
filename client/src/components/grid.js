@@ -20,7 +20,7 @@ export default function grid({ answer, id }) {
     }
   });
   const result = sumIncome - sumSpending;
-//   console.log(result);
+  //   console.log(result);
 
   const rows = [];
   answer.map((data) =>
@@ -31,11 +31,12 @@ export default function grid({ answer, id }) {
     })
   );
 
-//   console.log(rows);
+  //   console.log(rows);
   return (
     <div style={{ height: 550, width: 740 }}>
+      <h2>{answer && result}</h2>
       <DataGrid rows={rows} columns={columns} pageSize={15} />
-      <Login id={id}/>
+      <Login id={id} />
       <Logout />
     </div>
   );
