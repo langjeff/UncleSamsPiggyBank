@@ -2,6 +2,8 @@ import API from "../utils/API";
 import React, { useState, useEffect } from "react";
 import USPB_LOGO from "../images/USPB_LOGO.png";
 import Grid from "../components/grid";
+import Login from "../components/Login";
+import Logout from "../components/Logout";
 import "./App.css";
 
 function Answer() {
@@ -17,7 +19,7 @@ function Answer() {
       .then((res) => {
         setAnswer(res.data[0].answers[0]);
         setID(res.data[0]._id);
-        // console.log(res.data[0]._id);
+        console.log(res.data[0]._id);
       })
 
       .catch((err) => console.log(err));
@@ -33,7 +35,9 @@ function Answer() {
         />
       </div>
       <div>
-        <Grid answer={answer} id={id}/>
+        <Grid answer={answer}/>
+        <Login id={id}/>
+        <Logout />
       </div>
     </div>
   );

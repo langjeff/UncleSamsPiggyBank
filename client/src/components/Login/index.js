@@ -8,7 +8,8 @@ const clientId =
 
 function Login({ id }) {
   const [user, setUser] = useState([]);
-  // const [userSearch, setUserSearch] = useState();
+  // const [userSearch, setUserSearch] = useState()
+  console.log(id);
 
   const onSuccess = (res) => {
     // setUserSearch(res.profileObj.email);

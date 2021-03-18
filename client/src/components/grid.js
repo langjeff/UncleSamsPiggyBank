@@ -18,7 +18,7 @@ import Grid from "@material-ui/core/Grid";
 //   { field: "amount", headerName: "Amount", width: 300 },
 // ];
 
-export default function grid({ answer, id }) {
+export default function grid({ answer }) {
   var sumIncome = 0;
   var sumExpense = 0;
   answer.map(function (answer) {
