@@ -27,7 +27,7 @@ body {
 }
 
 .MuiDataGrid-root {
-  background-image: linear-gradient(white, grey);
+  /* background-image: linear-gradient(white, grey); */
 }
 
 .message {
@@ -87,7 +87,7 @@ button {
   border-radius: 20px;
   background-color: white;
   border: none;
-  box-shadow: 3px 3px 2px black;
+  /* box-shadow: 3px 3px 2px black; */
 }
 
 button:hover {

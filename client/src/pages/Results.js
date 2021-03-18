@@ -5,20 +5,20 @@ import "./App.css";
 import API from "../utils/API";
 
 function Results() {
-  const [results, setResults] = useState([])
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
-    loadResults()
-  }, [])
+    loadResults();
+  }, []);
 
   function loadResults() {
     API.getResults()
-      .then(res => {
+      .then((res) => {
         setResults(res.data);
         console.log(res.data);
       })
-      .catch(err => console.log(err));
-  };
+      .catch((err) => console.log(err));
+  }
 
   return (
     <div className="container">
@@ -30,8 +30,7 @@ function Results() {
         />
       </div>
       <div className="data-container">
-        <h4 align="center">Compare your results to others</h4>
-        <DataTable />
+        <DataTable results={results} />
       </div>
     </div>
   );
