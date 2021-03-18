@@ -44,8 +44,14 @@ export default function DataTable({ results }) {
   });
 
   return (
-    <div style={{ height: 500, width: 1000 }}>
-      <DataGrid autoHeight rows={rows} columns={columns} pageSize={20} />
+    <div style={{ height: 500, width: 1000, background: "white" }}>
+      <DataGrid
+        autoHeight
+        style={{ color: "black" }}
+        rows={rows}
+        columns={columns}
+        pageSize={20}
+      />
     </div>
   );
 }
