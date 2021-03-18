@@ -29,7 +29,7 @@ function Results() {
           className="Qlogo"
         />
       </div>
-      <div className="data-container">
+      <div>
         <DataTable results={results} />
       </div>
     </div>

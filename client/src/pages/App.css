@@ -21,14 +21,12 @@ body {
   display: contents;
   justify-content: center;
   align-items: center;
-  opacity: 100%;
+  /* opacity: 100%; */
   margin-left: 25%;
   margin-right: 25%;
 }
 
-.MuiDataGrid-root {
-  /* background-image: linear-gradient(white, grey); */
-}
+
 
 .message {
   flex-grow: 1;
